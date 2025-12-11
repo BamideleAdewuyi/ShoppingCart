@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-function navBar() {
+function Navbar() {
     return (
         <nav>
             <Link to="/">Costcutters</Link>
@@ -11,4 +11,4 @@ function navBar() {
     )
 };
 
-export default navBar;
+export default Navbar;
