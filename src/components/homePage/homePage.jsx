@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 function HomePage() {
     return (
-        <h1>Welcome to the </h1>
+        <h1>Welcome to the shop</h1>
     )
 }
 
