@@ -4,10 +4,10 @@ import styles from './Navbar.module.css'
 function Navbar() {
     return (
         <nav>
-            <Link to="/">Costcutters</Link>
-            <Link to="/">Home</Link>
-            <Link to="/shop">Shop</Link>
-            <Link to="/cart">Cart</Link>
+            <Link className="link" to="/">Costcutters</Link>
+            <Link className="link" to="/">Home</Link>
+            <Link className="link" to="/shop">Shop</Link>
+            <Link className="link" to="/cart">Cart</Link>
         </nav>
     )
 };
