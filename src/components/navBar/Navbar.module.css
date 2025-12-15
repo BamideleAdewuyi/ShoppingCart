@@ -1,4 +1,14 @@
 nav {
-    outline: 2px solid red;
     height: 3rem;
+    background-color: rgb(32, 38, 202);
+    display: flex;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+}
+
+a {
+    font-family: Futura;
+    font-weight: bold;
+    color: white;
 }
