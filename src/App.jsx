@@ -1,13 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from './components/Navbar/Navbar'
-import { Outlet } from 'react-router'
+import AllPages from './components/AllPages/AllPages'
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Outlet />
+      <AllPages />
     </div>
   )
 }
