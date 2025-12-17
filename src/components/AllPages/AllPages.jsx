@@ -3,6 +3,7 @@ import { Outlet } from "react-router";
 import { useState } from "react";
 
 function AllPages() {
+    const [noOfItems, setNoOfItems] = useState(0);
     return (
         <div>
             <Navbar />
