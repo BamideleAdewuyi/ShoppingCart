@@ -1,9 +1,9 @@
-import { Link } from "react-router";
+import { Link, useOutletContext } from "react-router";
 
 function Shop() {
     return (
         <div>
-            ITEMS
+            <h1>ITEMS</h1>
         </div>
     )
 }
