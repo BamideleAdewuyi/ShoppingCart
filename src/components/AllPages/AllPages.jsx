@@ -6,7 +6,7 @@ function AllPages() {
     const [noOfItems, setNoOfItems] = useState(0);
     return (
         <div>
-            <Navbar />
+            <Navbar noOfItems={noOfItems}/>
             <Outlet />
         </div>
     )
