@@ -7,7 +7,7 @@ function AllPages() {
     return (
         <div>
             <Navbar noOfItems={noOfItems}/>
-            <Outlet />
+            <Outlet context={[noOfItems, setNoOfItems]}/>
         </div>
     )
 }
