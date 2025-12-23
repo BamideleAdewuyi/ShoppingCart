@@ -4,10 +4,11 @@ import { useState } from "react";
 
 function AllPages() {
     const [noOfItems, setNoOfItems] = useState(0);
+    const [items, setItems] = useState({})
     return (
         <div>
             <Navbar noOfItems={noOfItems}/>
-            <Outlet context={[noOfItems, setNoOfItems]}/>
+            <Outlet context={[noOfItems, setNoOfItems, items, setItems]}/>
         </div>
     )
 }
