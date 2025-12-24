@@ -19,7 +19,7 @@ function Shop() {
         getItems();
     }, [])
     
-    console.log(items[4])
+    console.log(items)
     return (
         <div>
             <h1>ITEMS</h1>
