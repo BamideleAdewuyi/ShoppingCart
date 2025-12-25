@@ -1,7 +1,18 @@
 function Card({title, price, image}) {
-    return {
-
-    }
+    return (
+        <div className="card">
+            <form action="">
+                <img src={image} alt={title} />
+                <h2>{title}</h2>
+                <h3>{price}</h3>
+                <div className="quantity">
+                    <button type="button">-</button>
+                    <input type="number" placeholder="0"/>
+                    <button type="button">+</button>
+                </div>
+            </form>
+        </div>
+    )
 };
 
 export default Card;
