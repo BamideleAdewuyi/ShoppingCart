@@ -1,3 +1,5 @@
+import styles from './Card.module.css'
+
 function Card({title, price, image}) {
     return (
         <div className="card">
