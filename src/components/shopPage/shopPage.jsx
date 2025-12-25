@@ -1,5 +1,6 @@
 import { Link, useOutletContext } from "react-router";
 import { useEffect, useState } from "react";
+import Card from "../Card/Card";
 
 function Shop() {
     const [noOfItems, setNoOfItems, basket, setBasket] = useOutletContext();
@@ -19,7 +20,6 @@ function Shop() {
         getItems();
     }, [])
     
-    console.log(items)
     return (
         <div>
             <h1>ITEMS</h1>
