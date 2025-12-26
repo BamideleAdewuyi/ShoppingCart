@@ -5,8 +5,8 @@ function Card({title, price, image}) {
         <div className={styles.card}>
             <form action="">
                 <img src={image} alt={title} />
-                <h2>{title}</h2>
-                <h3>{price}</h3>
+                <h2 className={styles.itemName}>{title}</h2>
+                <h3 className={styles.price}>{price}</h3>
                 <div className={styles.quantity}>
                     <button type="button">-</button>
                     <input type="number" placeholder="0"/>
