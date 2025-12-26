@@ -1,6 +1,7 @@
 import { Link, useOutletContext } from "react-router";
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
+import styles from "./ShopPage.module.css"
 
 function Shop() {
     const [noOfItems, setNoOfItems, basket, setBasket] = useOutletContext();
@@ -23,7 +24,9 @@ function Shop() {
     return (
         <div>
             <h1>ITEMS</h1>
-            
+            <div className={styles.cards}>
+                
+            </div>
         </div>
     )
 }
