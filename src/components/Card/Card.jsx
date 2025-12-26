@@ -12,6 +12,7 @@ function Card({title, price, image}) {
                     <input type="number" placeholder="0"/>
                     <button type="button">+</button>
                 </div>
+                <button>Add to Cart</button>
             </form>
         </div>
     )
