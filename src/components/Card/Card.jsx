@@ -27,7 +27,7 @@ function Card({title, price, image, addToCart}) {
                     <input type="number" value={quantity} onChange={handleChange}/>
                     <button type="button" onClick={increment}>+</button>
                 </div>
-                <button type='button' onClick={addToCart}>Add to Cart</button>
+                <button type='button' onClick={() => addToCart(title, quantity)}>Add to Cart</button>
             </form>
         </div>
     )
