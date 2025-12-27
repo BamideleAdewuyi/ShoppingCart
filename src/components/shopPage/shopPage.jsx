@@ -23,7 +23,9 @@ function Shop() {
     }, [])
 
     function isItemInCart(item) {
-
+        let res = false;
+        if (item in cart)  res = true;
+        return res;
     };
 
     function addToCart(item, quantity, price) {
