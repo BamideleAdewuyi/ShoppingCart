@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import styles from "./ShopPage.module.css"
 
 function Shop() {
-    const [noOfItems, setNoOfItems, basket, setBasket] = useOutletContext();
+    const [noOfItems, setNoOfItems, cart, setCart] = useOutletContext();
     const [items, setItems] = useState([]);
 
     
@@ -21,13 +21,17 @@ function Shop() {
         }
         getItems();
     }, [])
+
+    function addToCart(item, quantity, price) {
+        const total = price * quantity
+    };
     
     return (
         <div>
             <h1>ITEMS</h1>
             <div className={styles.cards}>
                 {items.map(({id, title, price, image}) => (
-                    <Card key={id} title={title} price={price} image={image}/>
+                    <Card key={id} title={title} price={price} image={image} addToCart={addToCart}/>
                 ))}
             </div>
         </div>
