@@ -1,6 +1,8 @@
 import styles from './Card.module.css'
+import { useState } from 'react';
 
 function Card({title, price, image}) {
+    const [quantity, setQuantity] = useState(0)
     return (
         <div className={styles.card}>
             <form action="">
@@ -9,7 +11,7 @@ function Card({title, price, image}) {
                 <h3 className={styles.price}>£{price}</h3>
                 <div className={styles.quantity}>
                     <button type="button">-</button>
-                    <input type="number" placeholder={0}/>
+                    <input type="number" value={quantity}/>
                     <button type="button">+</button>
                 </div>
                 <button>Add to Cart</button>
