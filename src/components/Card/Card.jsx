@@ -12,6 +12,10 @@ function Card({title, price, image}) {
         if (quantity != 0) setQuantity(quantity - 1);
     };
 
+    function handleChange(newValue) {
+        setQuantity(Number(newValue.target.value))
+    };
+
     return (
         <div className={styles.card}>
             <form action="">
@@ -20,7 +24,7 @@ function Card({title, price, image}) {
                 <h3 className={styles.price}>£{price}</h3>
                 <div className={styles.quantity}>
                     <button type="button" onClick={decrement}>-</button>
-                    <input type="number" value={quantity}/>
+                    <input type="number" value={quantity} onChange={handleChange}/>
                     <button type="button" onClick={increment}>+</button>
                 </div>
                 <button>Add to Cart</button>
