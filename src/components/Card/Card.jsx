@@ -9,7 +9,7 @@ function Card({title, price, image}) {
                 <h3 className={styles.price}>£{price}</h3>
                 <div className={styles.quantity}>
                     <button type="button">-</button>
-                    <input type="number" placeholder="0"/>
+                    <input type="number" placeholder={0}/>
                     <button type="button">+</button>
                 </div>
                 <button>Add to Cart</button>
