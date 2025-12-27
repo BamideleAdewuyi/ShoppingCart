@@ -22,6 +22,10 @@ function Shop() {
         getItems();
     }, [])
 
+    function addItem(item, quantity) {
+
+    };
+
     function itemInCart(item) {
         let res = false;
         if (item in cart)  res = true;
@@ -29,7 +33,8 @@ function Shop() {
     };
 
     function addToCart(item, quantity, price) {
-        const total = price * quantity
+        const total = price * quantity;
+
     };
     
     return (
