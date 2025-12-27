@@ -1,7 +1,7 @@
 import styles from './Card.module.css'
 import { useState } from 'react';
 
-function Card({title, price, image}) {
+function Card({title, price, image, addToCart}) {
     const [quantity, setQuantity] = useState(0)
 
     function increment() {
@@ -27,7 +27,7 @@ function Card({title, price, image}) {
                     <input type="number" value={quantity} onChange={handleChange}/>
                     <button type="button" onClick={increment}>+</button>
                 </div>
-                <button type='button'>Add to Cart</button>
+                <button type='button' onClick={addToCart}>Add to Cart</button>
             </form>
         </div>
     )
