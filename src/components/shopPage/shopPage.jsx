@@ -5,7 +5,7 @@ import styles from "./ShopPage.module.css"
 
 function Shop() {
     const [noOfItems, setNoOfItems, basket, setBasket] = useOutletContext();
-    const [items, setItems] = useState({});
+    const [items, setItems] = useState([]);
 
     
     useEffect(() => {
@@ -13,7 +13,8 @@ function Shop() {
             try {
                 const res = await fetch('https://fakestoreapi.com/products');
                 const json = await res.json();
-                setItems(json);
+                const array = await json.slice(0, 8)
+                setItems(array);
             } catch (error) {
                 console.log(error);
             }
@@ -25,7 +26,9 @@ function Shop() {
         <div>
             <h1>ITEMS</h1>
             <div className={styles.cards}>
-                
+                {items.map(({id, title, price, image}) => (
+                    <Card key={id} title={title} price={price} image={image}/>
+                ))}
             </div>
         </div>
     )
