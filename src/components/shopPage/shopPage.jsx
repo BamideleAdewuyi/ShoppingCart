@@ -22,6 +22,10 @@ function Shop() {
         getItems();
     }, [])
 
+    function isItemInCart(item) {
+
+    };
+
     function addToCart(item, quantity, price) {
         const total = price * quantity
     };
