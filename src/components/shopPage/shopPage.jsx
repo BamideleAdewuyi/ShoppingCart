@@ -22,7 +22,7 @@ function Shop() {
         getItems();
     }, [])
 
-    function isItemInCart(item) {
+    function itemInCart(item) {
         let res = false;
         if (item in cart)  res = true;
         return res;
