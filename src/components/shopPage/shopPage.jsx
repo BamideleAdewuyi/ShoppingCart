@@ -21,7 +21,7 @@ function Shop() {
             }
         }
         getItems();
-    }, [])
+    }, [total])
 
     function itemInCart(item) {
         let res = false;
@@ -44,7 +44,8 @@ function Shop() {
                 [item]: quantity
             })
         }
-        setTotal(total + cost);
+        setNoOfItems(prev => prev + quantity);
+        setTotal(prev => prev + cost);
     };
     
     return (
