@@ -6,6 +6,7 @@ import styles from "./ShopPage.module.css"
 function Shop() {
     const [noOfItems, setNoOfItems, cart, setCart] = useOutletContext();
     const [items, setItems] = useState([]);
+    const [total, setTotal] = useState(0);
 
     
     useEffect(() => {
@@ -29,13 +30,15 @@ function Shop() {
     };
 
     function addToCart(item, quantity, price) {
-        const total = price * quantity;
+        const cost = price * quantity;
+        const prevTotal = cart.total;
         if (itemInCart(item)) {
             const prevQuantity = cart[item];
             setCart({
                 ...cart,
                 [item]: prevQuantity + quantity
             })
+
         } else {
             setCart({
                 ...cart,
