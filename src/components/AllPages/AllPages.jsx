@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function AllPages() {
     const [noOfItems, setNoOfItems] = useState(0);
-    const [cart, setCart] = useState({})
+    const [cart, setCart] = useState({total: 0})
     return (
         <div>
             <Navbar noOfItems={noOfItems}/>
