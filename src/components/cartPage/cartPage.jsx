@@ -1,9 +1,11 @@
 import { Link } from "react-router";
+import styles from "./CartPage.module.css"
 
 function Cart() {
     return (
         <div>
-            CART
+            <h1>Cart</h1>
+            
         </div>
     )
 }
