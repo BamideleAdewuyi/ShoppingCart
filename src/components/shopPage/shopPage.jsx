@@ -23,7 +23,11 @@ function Shop() {
     }, [])
 
     function addItem(item, quantity) {
-
+        const prevQuantity = cart[item].quantity;
+        setCart({
+            ...cart,
+            [item]: prevQuantity + quantity
+        })
     };
 
     function itemInCart(item) {
@@ -34,7 +38,18 @@ function Shop() {
 
     function addToCart(item, quantity, price) {
         const total = price * quantity;
-
+        if (itemInCart(item)) {
+            const prevQuantity = cart[item];
+            setCart({
+                ...cart,
+                [item]: prevQuantity + quantity
+            })
+        } else {
+            setCart({
+                ...cart,
+                [item]: quantity
+            })
+        }
     };
     
     return (
