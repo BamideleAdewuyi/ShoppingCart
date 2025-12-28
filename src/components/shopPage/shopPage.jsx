@@ -22,14 +22,6 @@ function Shop() {
         getItems();
     }, [])
 
-    function addItem(item, quantity) {
-        const prevQuantity = cart[item].quantity;
-        setCart({
-            ...cart,
-            [item]: prevQuantity + quantity
-        })
-    };
-
     function itemInCart(item) {
         let res = false;
         if (item in cart)  res = true;
@@ -50,6 +42,7 @@ function Shop() {
                 [item]: quantity
             })
         }
+
     };
     
     return (
