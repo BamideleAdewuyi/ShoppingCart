@@ -31,7 +31,6 @@ function Shop() {
 
     function addToCart(item, quantity, price) {
         const cost = price * quantity;
-        const prevTotal = cart.total;
         if (itemInCart(item)) {
             const prevQuantity = cart[item];
             setCart({
@@ -45,7 +44,7 @@ function Shop() {
                 [item]: quantity
             })
         }
-
+        setTotal(total + cost);
     };
     
     return (
