@@ -29,7 +29,7 @@ function Shop() {
         return res;
     };
 
-    function addToCart(item, quantity, price, image) {
+    function addToCart(item, quantity, price, image, id) {
         const cost = price * quantity;
         if (itemInCart(item)) {
             const prevQuantity = cart[item].quantity;
@@ -38,7 +38,8 @@ function Shop() {
                 [item]: {
                     quantity: Number(prevQuantity) + Number([quantity]),
                     image: image,
-                    price: price
+                    price: price,
+                    id: id
                 }                
             })
 
@@ -48,7 +49,8 @@ function Shop() {
                 [item]: {
                     quantity: quantity,
                     image: image,
-                    price: price
+                    price: price,
+                    id: id
                 }
             })
         }
