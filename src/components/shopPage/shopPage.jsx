@@ -59,7 +59,7 @@ function Shop() {
             <h1>ITEMS</h1>
             <div className={styles.cards}>
                 {items.map(({id, title, price, image}) => (
-                    <ShopCard key={id} title={title} price={price} image={image} addToCart={addToCart} amount={0}/>
+                    <ShopCard key={id} title={title} price={price} image={image} updateCart={addToCart} amount={0}/>
                 ))}
             </div>
         </div>
