@@ -1,6 +1,6 @@
 import { Link, useOutletContext } from "react-router";
 import { useEffect, useState } from "react";
-import Card from "../Card/Card";
+import ShopCard from "../ShopCard/ShopCard";
 import styles from "./ShopPage.module.css"
 
 function Shop() {
@@ -53,7 +53,7 @@ function Shop() {
             <h1>ITEMS</h1>
             <div className={styles.cards}>
                 {items.map(({id, title, price, image}) => (
-                    <Card key={id} title={title} price={price} image={image} addToCart={addToCart} amount={0}/>
+                    <ShopCard key={id} title={title} price={price} image={image} addToCart={addToCart} amount={0}/>
                 ))}
             </div>
         </div>
