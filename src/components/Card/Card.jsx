@@ -1,8 +1,8 @@
 import styles from './Card.module.css'
 import { useState } from 'react';
 
-function Card({title, price, image, addToCart}) {
-    const [quantity, setQuantity] = useState(0)
+function Card({title, price, image, addToCart, amount}) {
+    const [quantity, setQuantity] = useState(amount)
 
     function increment() {
         setQuantity(quantity + 1)
