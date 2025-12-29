@@ -1,7 +1,7 @@
 import styles from './ShopCard.module.css'
 import { useState } from 'react';
 
-function ShopCard({title, price, image, addToCart, amount}) {
+function ShopCard({title, price, image, updateCart, amount}) {
     const [quantity, setQuantity] = useState(amount)
 
     function increment() {
@@ -27,7 +27,7 @@ function ShopCard({title, price, image, addToCart, amount}) {
                     <input type="number" value={quantity} onChange={handleChange}/>
                     <button type="button" onClick={increment}>+</button>
                 </div>
-                <button type='button' onClick={() => addToCart(title, quantity, price, image)}>Add to Cart</button>
+                <button type='button' onClick={() => updateCart(title, quantity, price, image)}>Add to Cart</button>
             </form>
         </div>
     )
