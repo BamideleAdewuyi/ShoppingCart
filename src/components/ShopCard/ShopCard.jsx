@@ -27,7 +27,7 @@ function ShopCard({title, price, image, addToCart, amount}) {
                     <input type="number" value={quantity} onChange={handleChange}/>
                     <button type="button" onClick={increment}>+</button>
                 </div>
-                <button type='button' onClick={() => addToCart(title, quantity, price)}>Add to Cart</button>
+                <button type='button' onClick={() => addToCart(title, quantity, price, image)}>Add to Cart</button>
             </form>
         </div>
     )
