@@ -37,7 +37,8 @@ function Shop() {
                 ...cart,
                 [item]: {
                     quantity: Number(prevQuantity) + Number([quantity]),
-                    image: image
+                    image: image,
+                    price: price
                 }                
             })
 
@@ -46,7 +47,8 @@ function Shop() {
                 ...cart,
                 [item]: {
                     quantity: quantity,
-                    image: image
+                    image: image,
+                    price: price
                 }
             })
         }
