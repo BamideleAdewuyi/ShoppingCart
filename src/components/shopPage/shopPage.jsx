@@ -29,19 +29,25 @@ function Shop() {
         return res;
     };
 
-    function addToCart(item, quantity, price) {
+    function addToCart(item, quantity, price, image) {
         const cost = price * quantity;
         if (itemInCart(item)) {
-            const prevQuantity = cart[item];
+            const prevQuantity = cart[item].quantity;
             setCart({
                 ...cart,
-                [item]: prevQuantity + quantity
+                [item]: {
+                    quantity: Number(prevQuantity) + Number([quantity]),
+                    image: image
+                }                
             })
 
         } else {
             setCart({
                 ...cart,
-                [item]: quantity
+                [item]: {
+                    quantity: quantity,
+                    image: image
+                }
             })
         }
         setNoOfItems(prev => prev + quantity);
