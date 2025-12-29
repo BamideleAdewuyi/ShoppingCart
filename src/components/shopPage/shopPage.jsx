@@ -29,6 +29,10 @@ function Shop() {
         return res;
     };
 
+    addAllQuantity() {
+
+    };
+
     function addToCart(item, quantity, price, image, id) {
         const cost = price * quantity;
         if (itemInCart(item)) {
