@@ -22,15 +22,17 @@ function Cart() {
     }, [cart])
 
     function updateCart(title, quantity, price, image, id) {
-        setCart({
-                ...cart,
-                [title]: {
-                    quantity: quantity,
-                    image: image,
-                    price: price,
-                    id: id
-                }                
-            })
+        if (quantity != cart[title].quantity) {
+            setCart({
+                    ...cart,
+                    [title]: {
+                        quantity: quantity,
+                        image: image,
+                        price: price,
+                        id: id
+                    }                
+                })
+        }
     };
 
     return (
