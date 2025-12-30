@@ -20,7 +20,7 @@ function Navbar({cart}) {
     }, [cart])
     
     return (
-        <nav>
+        <nav className={styles.container}>
             <Link className="link" to="/">Costcutters</Link>
             <Link className="link" to="/">Home</Link>
             <Link className="link" to="/shop">Shop</Link>
