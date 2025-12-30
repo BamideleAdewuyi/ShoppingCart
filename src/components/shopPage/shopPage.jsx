@@ -29,13 +29,6 @@ function Shop() {
         return res;
     };
 
-    function addAllQuantity() {
-        const total = Object.keys(cart).reduce(function (previous, key) {
-            return previous + cart[key].quantity
-        }, 0)
-        return total
-    };
-
     function addToCart(item, quantity, price, image, id) {
         const cost = price * quantity;
         if (itemInCart(item)) {
@@ -49,7 +42,7 @@ function Shop() {
                     id: id
                 }                
             })
-        } else {
+        } else if (!itemInCart(item) && quantity > 0){
             setCart({
                 ...cart,
                 [item]: {
@@ -60,8 +53,6 @@ function Shop() {
                 }
             })
         }
-        // console.log(addAllQuantity())
-        // setNoOfItems(() => addAllQuantity());
         setTotal(prev => prev + cost);
     };
     
