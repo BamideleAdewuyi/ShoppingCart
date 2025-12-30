@@ -61,7 +61,7 @@ function Shop() {
             <h1>ITEMS</h1>
             <div className={styles.cards}>
                 {items.map(({id, title, price, image}) => (
-                    <Card key={id} title={title} price={price} image={image} updateCart={addToCart} amount={0} id={id} buttonText="Add to Cart"/>
+                    <Card key={id} title={title} price={parseFloat(price).toFixed(2)} image={image} updateCart={addToCart} amount={0} id={id} buttonText="Add to Cart"/>
                 ))}
             </div>
         </div>
