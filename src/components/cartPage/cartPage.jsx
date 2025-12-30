@@ -1,6 +1,6 @@
 import { Link, useOutletContext } from "react-router";
 import styles from "./CartPage.module.css";
-import ShopCard from "../ShopCard/ShopCard";
+import ShopCard from "../Card/Card";
 
 function Cart() {
     const [cart, setCart] = useOutletContext();

@@ -1,7 +1,7 @@
-import styles from './ShopCard.module.css'
+import styles from './Card.module.css'
 import { useState } from 'react';
 
-function ShopCard({title, price, image, updateCart, amount, id, buttonText}) {
+function Card({title, price, image, updateCart, amount, id, buttonText}) {
     const [quantity, setQuantity] = useState(amount)
 
     function increment() {
@@ -33,4 +33,4 @@ function ShopCard({title, price, image, updateCart, amount, id, buttonText}) {
     )
 };
 
-export default ShopCard;
+export default Card;
