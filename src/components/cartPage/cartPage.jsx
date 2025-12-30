@@ -13,7 +13,7 @@ function Cart() {
                 const total = Object.keys(cart).reduce(function (previous, key) {
             return previous + (cart[key].quantity * cart[key].price)
             }, 0)
-            setTotal(total)
+            setTotal(parseFloat(total).toFixed(2))
             } catch (error) {
                 console.log(error)
             }
@@ -41,7 +41,7 @@ function Cart() {
                 {Object.keys(cart)
                 .filter(key => cart[key].quantity > 0)
                 .map(key => (
-                    <ShopCard key={cart[key].id} title={key} price={cart[key].price} image={cart[key].image} updateCart={updateCart} amount={cart[key].quantity} id={cart[key].id} buttonText="Update"/>
+                    <ShopCard key={cart[key].id} title={key} price={parseFloat(cart[key].price).toFixed(2)} image={cart[key].image} updateCart={updateCart} amount={cart[key].quantity} id={cart[key].id} buttonText="Update"/>
                 ))}
             </div>
         </div>
