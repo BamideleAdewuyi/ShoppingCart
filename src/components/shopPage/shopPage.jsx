@@ -4,7 +4,7 @@ import ShopCard from "../ShopCard/ShopCard";
 import styles from "./ShopPage.module.css"
 
 function Shop() {
-    const [noOfItems, setNoOfItems, cart, setCart] = useOutletContext();
+    const [cart, setCart] = useOutletContext();
     const [items, setItems] = useState([]);
     const [total, setTotal] = useState(0);
 
@@ -29,8 +29,11 @@ function Shop() {
         return res;
     };
 
-    addAllQuantity() {
-
+    function addAllQuantity() {
+        const total = Object.keys(cart).reduce(function (previous, key) {
+            return previous + cart[key].quantity
+        }, 0)
+        return total
     };
 
     function addToCart(item, quantity, price, image, id) {
@@ -46,7 +49,6 @@ function Shop() {
                     id: id
                 }                
             })
-
         } else {
             setCart({
                 ...cart,
@@ -58,7 +60,8 @@ function Shop() {
                 }
             })
         }
-        setNoOfItems(prev => prev + quantity);
+        // console.log(addAllQuantity())
+        // setNoOfItems(() => addAllQuantity());
         setTotal(prev => prev + cost);
     };
     
