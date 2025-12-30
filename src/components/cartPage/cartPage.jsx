@@ -1,9 +1,25 @@
 import { Link, useOutletContext } from "react-router";
 import styles from "./CartPage.module.css";
 import ShopCard from "../Card/Card";
+import { useState, useEffect } from "react";
 
 function Cart() {
     const [cart, setCart] = useOutletContext();
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        async function findTotal(cart) {
+            try{
+                const total = Object.keys(cart).reduce(function (previous, key) {
+            return previous + (cart[key].quantity * cart[key].price)
+            }, 0)
+            setTotal(total)
+            } catch (error) {
+                console.log(error)
+            }
+        };
+        findTotal(cart);
+    }, [cart])
 
     function updateCart(title, quantity, price, image, id) {
         setCart({
@@ -20,6 +36,7 @@ function Cart() {
     return (
         <div>
             <h1>Cart</h1>
+            <h2>Total: £{total}</h2>
             <div className={styles.cards}>
                 {Object.keys(cart)
                 .filter(key => cart[key].quantity > 0)
