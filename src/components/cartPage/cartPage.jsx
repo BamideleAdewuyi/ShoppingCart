@@ -1,6 +1,6 @@
 import { Link, useOutletContext } from "react-router";
 import styles from "./CartPage.module.css";
-import ShopCard from "../Card/Card";
+import Card from "../Card/Card";
 import { useState, useEffect } from "react";
 
 function Cart() {
@@ -41,7 +41,7 @@ function Cart() {
                 {Object.keys(cart)
                 .filter(key => cart[key].quantity > 0)
                 .map(key => (
-                    <ShopCard key={cart[key].id} title={key} price={parseFloat(cart[key].price).toFixed(2)} image={cart[key].image} updateCart={updateCart} amount={cart[key].quantity} id={cart[key].id} buttonText="Update"/>
+                    <Card key={cart[key].id} title={key} price={parseFloat(cart[key].price).toFixed(2)} image={cart[key].image} updateCart={updateCart} amount={cart[key].quantity} id={cart[key].id} buttonText="Update"/>
                 ))}
             </div>
         </div>
